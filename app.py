@@ -97,6 +97,19 @@ raw_features_df = pd.DataFrame([{
     'Employer_Category_Unemployed': emp_cat_unemp
 }])
 
+# Force the columns to align with your exact training layout 
+feature_order = [
+    'Applicant_Income', 'Coapplicant_Income', 'Age', 'Dependents', 'Credit_Score', 
+    'Existing_Loans', 'DTI_Ratio', 'Savings', 'Collateral_Value', 'Loan_Amount', 
+    'Loan_Term', 'Education_Level', 'Loan_Purpose_Car', 'Loan_Purpose_Education', 
+    'Loan_Purpose_Home', 'Loan_Purpose_Personal', 'Marital_Status_Single', 
+    'Employment_Status_Salaried', 'Employment_Status_Self-employed', 'Employment_Status_Unemployed', 
+    'Property_Area_Semiurban', 'Property_Area_Urban', 'Gender_Male', 
+    'Employer_Category_Government', 'Employer_Category_MNC', 'Employer_Category_Private', 
+    'Employer_Category_Unemployed'
+]
+raw_features_df = raw_features_df[feature_order]
+
 st.write("---")
 
 if st.button("Run Eligibility Analysis", type="primary"):
